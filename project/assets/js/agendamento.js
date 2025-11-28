@@ -1,42 +1,51 @@
-// agendamento.js
-carregarDados().then(data => {
+// Lista inicial com exemplos
+let agendamentos = [
+    {
+        nome: "Marcos Silva",
+        data: "2025-11-25",
+        tipo: "Consulta"
+    },
+    {
+        nome: "Ana Beatriz",
+        data: "2025-11-26",
+        tipo: "Urgência"
+    },
+    {
+        nome: "Carlos Eduardo",
+        data: "2025-11-27",
+        tipo: "Consulta"
+    }
+];
 
-    const selectEspecialidade = document.getElementById("especialidade");
-    const selectUpa = document.getElementById("upa");
-    const selectHorario = document.getElementById("horario");
-    const form = document.getElementById("form-agendamento");
-    const protocoloTexto = document.getElementById("protocolo");
+// Mostrar os agendamentos na tela
+function atualizarLista() {
+    const lista = document.getElementById("listaAgendamentos");
+    lista.innerHTML = "";
 
-    // Preenche especialidades
-    data.especialidades.forEach(esp => {
-        const option = document.createElement("option");
-        option.value = esp;
-        option.textContent = esp;
-        selectEspecialidade.appendChild(option);
+    agendamentos.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nome} - ${item.data} - ${item.tipo}`;
+        lista.appendChild(li);
     });
+}
 
-    // Preenche UPAs
-    data.upas.forEach(upa => {
-        const option = document.createElement("option");
-        option.value = upa.id;
-        option.textContent = upa.nome;
-        selectUpa.appendChild(option);
-    });
+// Salvar novo agendamento
+document.getElementById("formAgendamento").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    // Preenche horários
-    data.horarios.forEach(hr => {
-        const option = document.createElement("option");
-        option.value = hr;
-        option.textContent = hr;
-        selectHorario.appendChild(option);
-    });
+    const nome = document.getElementById("nome").value;
+    const data = document.getElementById("data").value;
+    const tipo = document.getElementById("tipo").value;
 
-    // Simular envio
-    form.addEventListener("submit", e => {
-        e.preventDefault();
+    agendamentos.push({ nome, data, tipo });
 
-        const protocolo = "AGD-" + Math.floor(Math.random() * 9999);
-        protocoloTexto.textContent = `Consulta agendada! Protocolo: ${protocolo}`;
-        protocoloTexto.style.color = "green";
-    });
+    atualizarLista();
+
+    alert("Agendamento registrado!");
+
+    // Limpa os campos
+    document.getElementById("formAgendamento").reset();
 });
+
+// Inicializa mostrando os exemplos
+atualizarLista();

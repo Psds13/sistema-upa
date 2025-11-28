@@ -1,23 +1,25 @@
-// upas.js
-carregarDados().then(data => {
-    const lista = document.getElementById("lista-upas");
-    if (!lista) return;
+const upas = [
+        { nome: "UPA do Cohatrac", endereco: "Rua X, Cohatrac", id: 1 },
+        { nome: "UPA Cidade Operária", endereco: "Av. Y, Cidade Operária", id: 2 },
+        { nome: "UPA Anjo da Guarda", endereco: "Rua Z, Anjo da Guarda", id: 3 },
+        { nome: "UPA Vinhais", endereco: "Av. W, Vinhais", id: 4 },
+    ];
 
-    data.upas.forEach(upa => {
-        const card = document.createElement("div");
-        card.classList.add("card-upa");
+    const listaUpas = document.getElementById("listaUpas");
 
-        card.innerHTML = `
-            <img src="${upa.imagem}" alt="${upa.nome}">
-            <h3>${upa.nome}</h3>
-            <p><strong>Bairro:</strong> ${upa.bairro}</p>
-            <p><strong>Tempo de espera:</strong> ${upa.tempo_espera} min</p>
-            <p><strong>Status:</strong> 
-                ${upa.status === "normal" ? "🟢" : upa.status === "lotado" ? "🟡" : "🔴"} 
-                ${upa.status.toUpperCase()}
-            </p>
+    upas.forEach(upa => {
+        const div = document.createElement("div");
+        div.classList.add("upa");
+
+        div.innerHTML = `
+            <h2>${upa.nome}</h2>
+            <p>Endereço: ${upa.endereco}</p>
+            <button onclick="agendar(${upa.id})">Agendar</button>
         `;
 
-        lista.appendChild(card);
+        listaUpas.appendChild(div);
     });
-});
+
+    function agendar(upaId) {
+        window.location.href = `agendamento.html?upa=${upaId}`;
+    }
