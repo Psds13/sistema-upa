@@ -1,127 +1,125 @@
-# sistema-upa
+smartUPA 🏥
 
-🏥 Sistema de Agendamento de Consultas e Monitoramento de Leitos – UPAs São Luís
+Sistema de Agendamento de Consultas e Monitoramento de Leitos – UPAs São Luís
 
-Este projeto consiste em uma interface web criada para facilitar o agendamento de consultas nas Unidades de Pronto Atendimento (UPAs) de São Luís, além de exibir status de disponibilidade de leitos, vagas, atendimentos em andamento e outras informações em tempo real (mockadas ou integradas futuramente a uma API).
-
-Desenvolvido com HTML, CSS e JavaScript, e prototipado no Figma, o objetivo é melhorar a experiência do cidadão e otimizar o fluxo de atendimentos nas unidades.
+O smartUPA é uma interface web desenvolvida para otimizar o agendamento de consultas e monitoramento de leitos nas Unidades de Pronto Atendimento (UPAs) de São Luís. O sistema visa melhorar a experiência do cidadão, agilizar o fluxo de atendimentos e fornecer informações em tempo real (mockadas atualmente, podendo futuramente integrar com APIs reais).
 
 📌 Funcionalidades
 👨‍⚕️ Agendamentos
 
 Agendamento de consultas por:
 
-- Especialidade
+Especialidade médica
 
-- UPA desejada
+UPA desejada
 
-- Data e horário disponíveis
+Data e horário disponíveis
 
-- Confirmação do agendamento e geração de protocolo.
+Confirmação do agendamento com geração de protocolo
 
-- Visualização de consultas agendadas.
+Visualização de consultas agendadas
 
 🛏️ Status dos Leitos
 
-- Exibição em tempo real (ou simulado) de:
+Exibição de:
 
-- Leitos disponíveis
+Leitos disponíveis e ocupados
 
-- Leitos ocupados
+Taxa de ocupação (%)
 
-- Taxa de ocupação (%)
-
-- Tipos de leitos (observação, emergência, isolamento, etc.)
+Tipos de leitos (observação, emergência, isolamento, etc.)
 
 🏥 Status das UPAs
 
-Informações como:
+Informações em tempo real ou simuladas:
 
-- Tempo médio de espera
+Tempo médio de espera
 
-- Capacidade atual
+Capacidade atual
 
-- Número de pacientes em atendimento
+Número de pacientes em atendimento
 
-Situação geral: 🟢 Normal | 🟡 Lotado | 🔴 Superlotado
+Situação geral das UPAs:
+
+🟢 Normal
+
+🟡 Lotado
+
+🔴 Superlotado
 
 🔍 Busca e Filtros
 
-- Buscar UPAs por bairro
+Buscar UPAs por bairro
 
-- Filtrar por disponibilidade de leitos ou vagas
+Filtrar por:
 
-- Filtrar por especialidade médica
+Disponibilidade de leitos ou vagas
+
+Especialidade médica
 
 📱 Interface Responsiva
 
 Layout adaptado para:
 
-- Desktop
+Desktop
 
-- Tablets
+Tablets
 
-- Smartphones
+Smartphones
 
 🎨 Protótipo no Figma
 
-O design da interface foi planejado no Figma, contendo:
+O design da interface foi planejado no Figma, contemplando:
 
-- Fluxo do usuário
+Fluxo do usuário
 
-- Telas de login (opcional)
+Telas de login (opcional)
 
-- Tela inicial com mapa/lista das UPAs
+Tela inicial com mapa/lista das UPAs
 
-- Tela de agendamento
+Tela de agendamento
 
-- Dashboard de status
+Dashboard de status
 
-- Componentes reutilizáveis
+Componentes reutilizáveis
 
-🔗 Link do protótipo (exemplo):
-https://www.figma.com/proto/seu-prototipo-aqui
+🔗 Acesse o protótipo
 
-(Troque pelo link real do seu protótipo)
+🛠 Tecnologias Utilizadas
 
-🛠️ Tecnologias Utilizadas
+HTML
 
-Tecnologia 	             Uso
-HTML5	                      Estrutura das páginas
-CSS3 (Flexbox/Grid)      Estilos, layout e responsividade
-JavaScript	              Lógica, simulação de dados, interações da interface
-Figma	                      Criação do design e protótipo
-JSON (mock)	              Simulação de API para leitos e agendamentos
+CSS
 
-📁 Estrutura do Projeto
+JavaScript
 
-/project
-│── index.html
-│── upas.html
-│── agendamento.html
-│── status-leitos.html
-│── README.md
-│
-│── /assets
-│     ├── /css
-│     │     ├── style.css
-│     │     ├── agendamento.css
-│     │     ├── upas.css
-│     │     └── status-leitos.css
-│     │
-│     ├── /js
-│     │     ├── main.js                 // scripts gerais
-│     │     ├── apiMock.js              // simulação da API (fetch do JSON)
-│     │     ├── agendamento.js          // lógica da página de agendamento
-│     │     ├── upas.js                 // lógica da listagem/consulta das UPAs
-│     │     ├── statusLeitos.js         // lógica do dashboard de leitos
-│     │     ├── filtros.js              // filtros de UPAs, leitos, especialidades
-│     │     └── utils.js                // funções utilitárias
-│     │
-│     └── /img
-│           ├── logo.png
-│           ├── icones/
-│           └── upas/
-│
-└── /mock
-      └── dados.json
+Figma (protótipo de design)
+
+⚡ Objetivo
+
+O smartUPA busca tornar o atendimento em UPAs mais eficiente, organizado e transparente, proporcionando:
+
+Menor tempo de espera
+
+Melhor gestão de leitos
+
+Facilidade no agendamento de consultas
+
+smartUPA/
+├── index.html # Página inicial / dashboard
+├── agendamento.html # Tela de agendamento de consultas
+├── status-leitos.html # Tela de status dos leitos
+├── css/
+│ ├── style.css # Estilos gerais
+│ ├── agendamento.css # Estilos específicos da tela de agendamento
+│ └── status-leitos.css # Estilos específicos da tela de status de leitos
+├── js/
+│ ├── main.js # Scripts gerais
+│ ├── agendamento.js # Scripts para agendamento
+│ └── status-leitos.js # Scripts para status de leitos
+├── assets/
+│ ├── images/ # Logos, ícones e imagens do protótipo
+│ └── fonts/ # Fontes personalizadas
+├── README.md # Documentação do projeto
+└── prototipo/
+└── figma-link.txt # Link ou referência para o protótipo Figma
