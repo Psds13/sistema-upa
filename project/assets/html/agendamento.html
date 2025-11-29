@@ -2,33 +2,46 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamentos</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Agendamento - smartUPA</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <script defer src="../js/agendamento.js"></script>
 </head>
 <body>
-    <h1>Agendamento de Pacientes</h1>
-
-    <form id="formAgendamento">
-        <label>Nome do Paciente:</label>
-        <input type="text" id="nome" required>
-
-        <label>Data:</label>
-        <input type="date" id="data" required>
-
-        <label>Tipo de Atendimento:</label>
-        <select id="tipo">
-            <option value="Urgência">Urgência</option>
-            <option value="Consulta">Consulta</option>
+    <h1>Agendamento de Consulta</h1>
+    
+    <img src="../img/agendamentoUPA.png" alt="Ilustração de Agendamento smartUPA" class="imagem-agendamento">
+    <div class="form-container">
+        <label>Especialidade:</label>
+        <select id="especialidade">
+            <option value="Clínico Geral">Clínico Geral</option>
+            <option value="Pediatria">Pediatria</option>
+            <option value="Ortopedia">Ortopedia</option>
         </select>
 
-        <button type="submit">Agendar</button>
-    </form>
+        <label>UPA:</label>
+        <select id="upa">
+            <option>UPA Cidade Operária</option>
+            <option>UPA Itaqui-Bacanga</option>
+            <option>UPA Vinhais</option>
+        </select>
 
-    <h2>Agendamentos Registrados</h2>
-    <ul id="listaAgendamentos"></ul>
+        <label>Data:</label>
+        <input type="date" id="data">
 
-    <script src="../js/api-mock.js"></script>
-    <script src="../js/agendamento.js"></script>
+        <label>Horário:</label>
+        <input type="time" id="hora">
+
+        <button id="btnAgendar">Confirmar Agendamento</button>
+
+        <p id="protocolo"></p>
+        
+        <button id="btnVoltar">Voltar</button> 
+    </div>
+
+    <hr>
+
+    <div id="listaAgendamentos">
+        <h2>Agendamentos Anteriores</h2>
+        </div>
 </body>
 </html>

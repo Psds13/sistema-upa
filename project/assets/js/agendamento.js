@@ -1,51 +1,62 @@
-// Lista inicial com exemplos
-let agendamentos = [
-    {
-        nome: "Marcos Silva",
-        data: "2025-11-25",
-        tipo: "Consulta"
-    },
-    {
-        nome: "Ana Beatriz",
-        data: "2025-11-26",
-        tipo: "Urgência"
-    },
-    {
-        nome: "Carlos Eduardo",
-        data: "2025-11-27",
-        tipo: "Consulta"
+// (Conteúdo do agendamento.js, sem alterações)
+document.addEventListener("DOMContentLoaded", function() {
+    const btnAgendar = document.getElementById("btnAgendar");
+    const btnVoltar = document.getElementById("btnVoltar");
+    const listaAgendamentosDiv = document.getElementById("listaAgendamentos");
+
+    function exibirAgendamentos() {
+        const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+        
+        listaAgendamentosDiv.innerHTML = '<h2>Agendamentos Anteriores</h2>';
+
+        if (agendamentos.length === 0) {
+            listaAgendamentosDiv.innerHTML += '<p>Nenhum agendamento realizado ainda.</p>';
+            return;
+        }
+
+        const ul = document.createElement('ul');
+        agendamentos.forEach((agendamento, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <b>Protocolo:</b> ${agendamento.protocolo}<br>
+                <b>Especialidade:</b> ${agendamento.esp} | <b>UPA:</b> ${agendamento.upa}<br>
+                <b>Data/Hora:</b> ${agendamento.data} às ${agendamento.hora}
+                <hr>
+            `;
+            ul.appendChild(li);
+        });
+
+        listaAgendamentosDiv.appendChild(ul);
     }
-];
 
-// Mostrar os agendamentos na tela
-function atualizarLista() {
-    const lista = document.getElementById("listaAgendamentos");
-    lista.innerHTML = "";
+    exibirAgendamentos(); 
+    
+    btnAgendar.addEventListener("click", function () {
+        const esp = document.getElementById("especialidade").value;
+        const upa = document.getElementById("upa").value;
+        const data = document.getElementById("data").value;
+        const hora = document.getElementById("hora").value;
 
-    agendamentos.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${item.nome} - ${item.data} - ${item.tipo}`;
-        lista.appendChild(li);
+        if (!esp || !upa || !data || !hora) {
+            alert("Preencha todos os campos!");
+            return;
+        }
+
+        const protocolo = "UPA-" + Math.floor(Math.random() * 9000 + 1000);
+
+        const novoAgendamento = { esp, upa, data, hora, protocolo };
+
+        const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+        agendamentos.unshift(novoAgendamento); 
+        localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+
+        document.getElementById("protocolo").innerText =
+            "✅ Agendamento confirmado! Protocolo: " + protocolo;
+        
+        exibirAgendamentos();
     });
-}
 
-// Salvar novo agendamento
-document.getElementById("formAgendamento").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById("nome").value;
-    const data = document.getElementById("data").value;
-    const tipo = document.getElementById("tipo").value;
-
-    agendamentos.push({ nome, data, tipo });
-
-    atualizarLista();
-
-    alert("Agendamento registrado!");
-
-    // Limpa os campos
-    document.getElementById("formAgendamento").reset();
+    btnVoltar.addEventListener("click", function() {
+        window.location.href = "../html/index.html"; 
+    });
 });
-
-// Inicializa mostrando os exemplos
-atualizarLista();

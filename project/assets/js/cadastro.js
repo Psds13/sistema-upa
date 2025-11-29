@@ -1,8 +1,28 @@
-document.getElementById("formCadastro").addEventListener("submit", function(event) {
-    event.preventDefault(); // impede reload
+document.addEventListener("DOMContentLoaded", () => {
+    const btnCadastrar = document.getElementById("btnCadastrar");
 
-    alert("Cadastro realizado com sucesso! (simulação)");
+    // Adiciona o evento de clique ao botão
+    btnCadastrar.addEventListener("click", () => {
+        
+        // Captura e remove espaços em branco (trim)
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value.trim();
 
-    // Redireciona para a página inicial
-    window.location.href = "index.html";
+        // Validação
+        if (!nome || !email || !senha) {
+            alert("⚠️ Por favor, preencha todos os campos!");
+            return; 
+        }
+
+        // Cria e salva o objeto de usuário no localStorage
+        const user = { nome, email, senha };
+        localStorage.setItem("user", JSON.stringify(user));
+
+        alert("✅ Cadastro realizado com sucesso!");
+        
+        // CORRIGIDO: Redirecionamento correto:
+        // Sair de /js (..) e entrar em /html (/html/login.html)
+        window.location.href = "../html/login.html";
+    });
 });
