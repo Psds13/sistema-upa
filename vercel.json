@@ -13,6 +13,7 @@
   "routes": [
     {
       "src": "/project/assets/(.*)",
+      "dest": "/project/assets/$1",
       "headers": {
         "cache-control": "public, max-age=31536000, immutable"
       }
@@ -20,21 +21,6 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        }
-      ]
     }
   ]
 }
