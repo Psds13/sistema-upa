@@ -105,21 +105,37 @@ Melhor gestão de leitos
 
 Facilidade no agendamento de consultas
 
-smartUPA/
-├── index.html # Página inicial / dashboard
-├── agendamento.html # Tela de agendamento de consultas
-├── status-leitos.html # Tela de status dos leitos
-├── css/
-│ ├── style.css # Estilos gerais
-│ ├── agendamento.css # Estilos específicos da tela de agendamento
-│ └── status-leitos.css # Estilos específicos da tela de status de leitos
-├── js/
-│ ├── main.js # Scripts gerais
-│ ├── agendamento.js # Scripts para agendamento
-│ └── status-leitos.js # Scripts para status de leitos
-├── assets/
-│ ├── images/ # Logos, ícones e imagens do protótipo
-│ └── fonts/ # Fontes personalizadas
-├── README.md # Documentação do projeto
-└── prototipo/
-└── figma-link.txt # Link ou referência para o protótipo Figma
+SISTEMA-UPA/
+├─ project/
+│  └─ assets/
+│     ├─ css/
+│     │  ├─ agendamento.css
+│     │  ├─ cadastro.css
+│     │  ├─ login.css
+│     │  ├─ status-leitos.css
+│     │  ├─ style.css
+│     │  └─ upas.css
+│     ├─ img/
+│     │  ├─ agendamentoUPA.png
+│     │  ├─ aux_med.png
+│     │  ├─ smartUPA.png
+│     │  ├─ status-leitosUPA.png
+│     │  └─ status-upa.jpg
+│     └─ js/
+│        ├─ agendamento.js
+│        ├─ cadastro.js
+│        ├─ login.js
+│        ├─ main.js
+│        ├─ status-leitos.js
+│        └─ status-upas.js
+├─ proto/
+│  └─ prototipo-figma.pdf
+├─ agendamento.html
+├─ cadastro.html
+├─ favicon.ico
+├─ index.html
+├─ login.html
+├─ README.md
+├─ status-leitos.html
+├─ upas.html
+└─ vercel.json
