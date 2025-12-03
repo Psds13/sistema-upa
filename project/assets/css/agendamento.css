@@ -18,8 +18,10 @@ h1 {
 
 /* ---------- IMAGEM ---------- */
 .imagem-agendamento {
+    border-radius: 20px;
     display: block;
-    width: 350px;
+    width: 430px;
+    height: 350px;
     margin: 0 auto 25px auto;
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
 }
