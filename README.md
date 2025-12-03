@@ -93,7 +93,7 @@ CSS
 
 JavaScript
 
-Figma (protótipo de design)
+Figma (protótipo de design) Link: https://www.figma.com/design/Esza1frHBIscyTJrQb7DyF/Projeto-upas?node-id=0-1&t=eoQUsARqANXVbqWi-1
 
 ⚡ Objetivo
 
