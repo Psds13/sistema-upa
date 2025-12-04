@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #333;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p.subtitulo {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.planos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plano {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-top: 8px solid #17aa60;
+}
+
+.plano.popular {
+    border-top: 8px solid #ffb300;
+    transform: scale(1.03);
+}
+
+.plano:hover {
+    transform: translateY(-5px);
+}
+
+.preco {
+    font-size: 28px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #17aa60;
+}
+
+.plano ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.plano ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.plano ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #17aa60;
+}
+
+button.assinar {
+    width: 100%;
+    padding: 12px;
+    background: #17aa60;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.assinar:hover {
+    background: #128046;
+}
+
+.tabela {
+    margin-top: 60px;
+    max-width: 1000px;
+    margin-inline: auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background: #17aa60;
+    color: white;
+}
+
+.faq {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+details {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+summary {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cta {
+    text-align: center;
+    margin: 60px 0 30px;
+}
+
+.cta button {
+    padding: 15px 25px;
+    background: #ffb300;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}

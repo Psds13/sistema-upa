@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos Smart UPA</title>
+    <!-- Link para CSS externo -->
+    <link rel="stylesheet" href="project/assets/css/planos.css">
+</head>
+<body>
+
+    <h1>Planos de Assinatura Smart UPA</h1>
+    <p class="subtitulo">Escolha o plano ideal para sua cidade e modernize o atendimento à saúde.</p>
+
+    <div class="planos-container">
+
+        <!-- Essencial -->
+        <div class="plano">
+            <h2>Essencial</h2>
+            <p class="preco">R$ 699/mês</p>
+            <ul>
+                <li>Acesso ao sistema Smart UPA</li>
+                <li>Consulta em tempo real</li>
+                <li>Informações das unidades</li>
+                <li>Hospedagem inclusa</li>
+                <li>Suporte por e-mail</li>
+            </ul>
+            <button class="assinar" onclick="assinar('Essencial')">Assinar Essencial</button>
+        </div>
+
+        <!-- Avançado -->
+        <div class="plano popular">
+            <h2>Avançado ⭐</h2>
+            <p class="preco">R$ 1.299/mês</p>
+            <ul>
+                <li>Tudo do Essencial</li>
+                <li>Agendamento de atendimentos</li>
+                <li>Relatórios e estatísticas</li>
+                <li>Customização básica</li>
+                <li>Suporte via WhatsApp</li>
+            </ul>
+            <button class="assinar" onclick="assinar('Avançado')">Assinar Avançado</button>
+        </div>
+
+        <!-- Premium -->
+        <div class="plano">
+            <h2>Premium</h2>
+            <p class="preco">R$ 2.499/mês</p>
+            <ul>
+                <li>Tudo do Avançado</li>
+                <li>Integração com sistemas municipais</li>
+                <li>API exclusiva</li>
+                <li>Customização completa</li>
+                <li>Suporte prioritário</li>
+            </ul>
+            <button class="assinar" onclick="assinar('Premium')">Assinar Premium</button>
+        </div>
+
+        <!-- Governança -->
+        <div class="plano">
+            <h2>Governança</h2>
+            <p class="preco">Sob consulta</p>
+            <ul>
+                <li>Tudo do Premium</li>
+                <li>SLA garantido</li>
+                <li>Equipe técnica dedicada</li>
+                <li>Dashboards avançados</li>
+                <li>Contratos anuais</li>
+            </ul>
+            <button class="assinar" onclick="assinar('Governança')">Falar com Consultor</button>
+        </div>
+
+    </div>
+
+    <!-- Tabela comparativa -->
+    <div class="tabela">
+        <h2>Comparação de Planos</h2>
+        <table>
+            <tr>
+                <th>Recurso</th>
+                <th>Essencial</th>
+                <th>Avançado</th>
+                <th>Premium</th>
+                <th>Governança</th>
+            </tr>
+            <tr>
+                <td>Consulta em tempo real</td>
+                <td>✔</td><td>✔</td><td>✔</td><td>✔</td>
+            </tr>
+            <tr>
+                <td>Agendamento</td>
+                <td>❌</td><td>✔</td><td>✔</td><td>✔</td>
+            </tr>
+            <tr>
+                <td>Relatórios</td>
+                <td>❌</td><td>✔</td><td>✔</td><td>✔</td>
+            </tr>
+            <tr>
+                <td>Integrações</td>
+                <td>❌</td><td>❌</td><td>✔</td><td>✔</td>
+            </tr>
+            <tr>
+                <td>Equipe dedicada</td>
+                <td>❌</td><td>❌</td><td>❌</td><td>✔</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+        <h2>Perguntas Frequentes</h2>
+
+        <details>
+            <summary>O sistema funciona em qualquer município?</summary>
+            <p>Sim! É totalmente adaptável e funciona em qualquer UPA do Brasil.</p>
+        </details>
+
+        <details>
+            <summary>Precisa instalar algo?</summary>
+            <p>Não. É tudo online e acessado pelo navegador.</p>
+        </details>
+
+        <details>
+            <summary>O plano Premium pode ser integrado ao e-SUS?</summary>
+            <p>Sim, o Premium e Governança permitem integrações.</p>
+        </details>
+
+        <details>
+            <summary>Qual o prazo de implantação?</summary>
+            <p>Entre 3 e 10 dias, dependendo do plano.</p>
+        </details>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="cta">
+        <h2>Pronto para modernizar a saúde pública da sua cidade?</h2>
+        <button onclick="solicitarDemo()">Solicitar Demonstração</button>
+    </div>
+
+    <script src="project/assets/js/planos.js"></script>
+</body>
+</html>
