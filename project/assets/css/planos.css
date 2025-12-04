@@ -36,11 +36,11 @@ p.subtitulo {
     padding: 25px;
     box-shadow: 0px 8px 18px rgba(0,0,0,0.1);
     transition: 0.3s;
-    border-top: 8px solid #17aa60;
+    border-top: 8px solid #0a9396; /* Nova cor principal */
 }
 
 .plano.popular {
-    border-top: 8px solid #ffb300;
+    border-top: 8px solid #ffb300; /* Destaque amarelo mantido */
     transform: scale(1.03);
 }
 
@@ -52,7 +52,7 @@ p.subtitulo {
     font-size: 28px;
     margin: 15px 0;
     font-weight: bold;
-    color: #17aa60;
+    color: #0a9396; /* Nova cor principal */
 }
 
 .plano ul {
@@ -70,13 +70,13 @@ p.subtitulo {
     content: "✔";
     position: absolute;
     left: 0;
-    color: #17aa60;
+    color: #0a9396; /* Nova cor principal */
 }
 
 button.assinar {
     width: 100%;
     padding: 12px;
-    background: #17aa60;
+    background: #0a9396; /* Nova cor principal */
     border: none;
     color: white;
     font-size: 16px;
@@ -86,7 +86,7 @@ button.assinar {
 }
 
 button.assinar:hover {
-    background: #128046;
+    background: #076b6e; /* Tom mais escuro para hover */
 }
 
 .tabela {
@@ -111,7 +111,7 @@ table th, table td {
 }
 
 table th {
-    background: #17aa60;
+    background: #0a9396; /* Nova cor principal */
     color: white;
 }
 
@@ -141,7 +141,7 @@ summary {
 
 .cta button {
     padding: 15px 25px;
-    background: #ffb300;
+    background: #ffb300; /* Mantido amarelo para destaque */
     border: none;
     border-radius: 10px;
     font-size: 18px;
